@@ -5,11 +5,13 @@ import Link from "next/link";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { MENU_HEADER } from "@/constants";
-import Github from '../../../public/github.png'
-import Linkedin from '../../../public/linkedin.png'
+import Github from "../../../public/github.png";
+import Linkedin from "../../../public/linkedin.png";
 import ButtonMenuBar from "./ButtonMenuBar";
+import { useThemeContext } from "@/providers/ThemeColor";
 
 const HeaderMemo = () => {
+  const { currentTheme } = useThemeContext();
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [openButtonMenu, setOpenButtonMenu] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -53,12 +55,13 @@ const HeaderMemo = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   return (
     <div
-      className={`flex items-center fixed top-0 w-full z-50 ${
+      className={`flex items-center fixed top-0 w-full z-30 ${
         scrolled
-          ? "h-16 duration-300 bg-black/40 transition-all"
-          : "h-24 duration-300 bg-header transition-all"
+          ? "h-16 duration-300 bg-[#1e1e1e78] transition-all"
+          : "h-24 duration-300 bg-[#1e1e1e78] transition-all"
       }`}
     >
       <div className="width-80 flex-between">
@@ -92,9 +95,9 @@ const HeaderMemo = () => {
       {openButtonMenu ? (
         <div
           ref={modalRef}
-          className={`z-50 absolute left-0 right-0 bg-HeaderMenu rounded-md ${
-            scrolled ? "top-[60px]" : "top-[92px]"
-          }  flex flex-col pl-8 font-semibold text-xl h-80 w-full lg:w-96 opacity-100 duration-500 text-stone-100`}
+          className={`z-50 absolute left-0 right-0 bg-[#1e1e1e78] rounded-md ${
+            scrolled ? "top-[60px]" : "top-[95px]"
+          }  flex flex-col pl-8 font-semibold text-xl h-80 w-full lg:w-96 opacity-100 duration-500 text-stone-100 overflow-hidden`}
         >
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-6">
@@ -104,13 +107,19 @@ const HeaderMemo = () => {
                 href={item.id}
                 style={{ transition: `all ${item.delay}ms` }}
               >
-                {item.title}
+                <p className="relative inline-block group">
+                  {item.title}
+                  <span
+                    style={{ backgroundColor: `${currentTheme.primary}` }}
+                    className={`absolute left-0 right-0 bottom-0 h-1 transform scale-x-0 transform-origin-center transition-transform rounded-xl duration-300 group-hover:scale-x-100`}
+                  ></span>
+                </p>
               </a>
             </div>
           ))}
         </div>
       ) : (
-        <div className="z-50 absolute top-[75px] left-0 text-stone-100 bg-HeaderMenu flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0">
+        <div className="z-50 absolute top-[95px] left-0 text-stone-100 bg-[#1e1e1e78] flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0">
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-3.5">
               <a

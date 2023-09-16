@@ -6,6 +6,9 @@ import Welcome from "@/components/Welcome";
 import Transition from "@/components/Transition";
 import StarsCanvas from "@/components/canvas/Stars";
 import Header from "@/components/Header";
+import Settings from "@/components/Settings";
+import ToasterProvider from "@/providers/ToasterProvider";
+import { ThemeProviderWrapper } from "@/providers/ThemeColor";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState<boolean>(true);
@@ -40,11 +43,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-black h-[100vh]">
-      <StarsCanvas />
-      {showWelcome && <Welcome onWelcomeComplete={handleWelcomeComplete} />}
-      {/* {shouldShowTransition && <Transition />} */}
-      {showMainPage && <React.Fragment><Header /></React.Fragment>}
-    </div>
+    <ThemeProviderWrapper>
+      <div className="bg-black h-[100vh]">
+        <StarsCanvas />
+        {showWelcome && <Welcome onWelcomeComplete={handleWelcomeComplete} />}
+        {/* {shouldShowTransition && <Transition />} */}
+        {showMainPage && (
+          <div className="relative">
+            <ToasterProvider />
+            <Settings />
+            <Header />
+          </div>
+        )}
+      </div>
+    </ThemeProviderWrapper>
   );
 }

@@ -2,11 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .hover-item {
+    @apply hover:opacity-70 duration-300 active:opacity-100;
+  }
+  .width-80 {
+    @apply w-[80%] mx-auto;
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
 :root,
 html,
 body {
   margin: 0;
   color: white;
+  scroll-behavior: smooth;
 }
 
 .transition {
@@ -18,4 +34,33 @@ body {
     rgb(27, 48, 55) 70%,
     rgba(43, 39, 42, 0.089) 2%
   );
+}
+
+.spin-button {
+  animation: spin 4s linear infinite;
+}
+
+.bg-BluePurple {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(127, 255, 0) 0%,
+    rgb(152, 70, 242) 100.2%
+  );
+}
+
+.translate-x-0 {
+  transform: translateX(0);
+}
+
+.translate-x-full {
+  transform: translateX(100%);
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }
