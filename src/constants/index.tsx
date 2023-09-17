@@ -1,4 +1,17 @@
+import Image from 'next/image';
 import Anpha from '../../public/logoanpha.jpg'
+import ANTD from '../../public/technologies/antd.png'
+import CSS from '../../public/technologies/css.png'
+import GIT from '../../public/technologies/git.png'
+import HTML from '../../public/technologies/html.png'
+import JAVASCRIPT from '../../public/technologies/javascript.png'
+import MONGO from '../../public/technologies/mongodb.png'
+import NEXT from '../../public/technologies/nextjs.png'
+import NODE from '../../public/technologies/nodejs.png'
+import REACT from '../../public/technologies/reactjs.png'
+import REDUX from '../../public/technologies/redux.png'
+import TAILWIND from '../../public/technologies/tailwind.png'
+import TYPESCRIPT from '../../public/technologies/typescript.png'
 
 export const MENU_HEADER = [
     { title: "About", id: "#overview", delay: "200" },
@@ -8,21 +21,55 @@ export const MENU_HEADER = [
     { title: "Contact", id: "#contact", delay: "600" },
   ];
 
-  export const EXPERIMENTS = [
+  export const TECHNOLOGIES = [
     {
-      title: "Frontend Developer",
-      company_name: "Acom Company",
-      icon: Anpha,
-      teamSize: 8,
-      iconBg: "#383E56",
-      date: "June 2022 - Present",
-      technology:
-        "HTML, CSS, Javascript, Typescript, ReactJS, Redux-saga, Redux, TailwindCSS, Ant Design, MySQL, NodeJS, More... ",
-      points: [
-        "Developing and maintaining web applications using React.js, Typescript and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
+      name: "HTML 5",
+      icon: <Image src={HTML} alt="icon" />,
+    },
+    {
+      name: "CSS 3",
+      icon: <Image src={CSS} alt="icon" />,
+    },
+    {
+      name: "JavaScript",
+      icon: <Image src={JAVASCRIPT} alt="icon" />,
+    },
+    {
+      name: "TypeScript",
+      icon: <Image src={TYPESCRIPT} alt="icon" />,
+    },
+    {
+      name: "React JS",
+      icon: <Image src={REACT} alt="icon" />,
+    },
+    {
+      name: "Next JS",
+      icon: <Image src={NEXT} alt="icon" />,
+    },
+    {
+      name: "Redux Toolkit",
+      icon: <Image src={REDUX} alt="icon" />,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: <Image src={TAILWIND} alt="icon" />,
+    },
+    {
+      name: "Ant Design",
+      icon: <Image src={ANTD} alt="icon" />,
+    },
+    {
+      name: "Node JS",
+      icon: <Image src={NODE} alt="icon" />,
+    },
+    {
+      name: "MongoDB",
+      icon: <Image src={MONGO} alt="icon" />,
+    },
+  
+    {
+      name: "git",
+      icon: <Image src={GIT} alt="icon" />,
     },
   ];
+  

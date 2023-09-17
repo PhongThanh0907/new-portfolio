@@ -13,6 +13,7 @@ import Banner from "@/components/Banner";
 import { LanguageProvider } from "@/providers/TranslateProvider";
 import Overviews from "@/components/Overviews";
 import WorkExperiment from "@/components/WorkExperiment";
+import Technologies from "@/components/Technologies";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState<boolean>(true);
@@ -59,6 +60,7 @@ export default function Home() {
             <Banner />
             <Overviews />
             <WorkExperiment />
+            <Technologies />
           </div>
         )}
       </div>

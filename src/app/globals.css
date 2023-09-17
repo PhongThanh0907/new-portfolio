@@ -113,6 +113,14 @@ body {
   animation: rotate 5s linear 2s infinite alternate;
 }
 
+.animation {
+  animation: animate1 2s infinite ease alternate;
+}
+
+.animation-1 {
+  animation: animate2 2s infinite ease alternate;
+}
+
 @keyframes changeColorBlue {
   0% {
     background-color: #00f2ffd3;
@@ -272,5 +280,23 @@ body {
   }
   100% {
     transform: rotate(-2deg);
+  }
+}
+
+@keyframes animate1 {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes animate2 {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0px);
   }
 }
