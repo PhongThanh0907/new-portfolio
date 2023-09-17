@@ -4,18 +4,39 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
+import { useLocalization } from "@/providers/TranslateProvider";
 import { useThemeContext } from "@/providers/ThemeColor";
 import { MENU_HEADER } from "@/constants";
 import Github from "../../../public/github.png";
 import Linkedin from "../../../public/linkedin.png";
 import ButtonMenuBar from "./ButtonMenuBar";
+import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+
+const options = [
+  { label: "English", value: "en" },
+  { label: "Vietnamese", value: "vi" },
+];
 
 const HeaderMemo = () => {
   const { currentTheme } = useThemeContext();
+  const { changeLanguage, t } = useLocalization("en");
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [openButtonMenu, setOpenButtonMenu] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(options[0].label);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const selectOption = (option: { label: string; value: string }) => {
+    setSelectedOption(option.label);
+    changeLanguage(option.value);
+    setIsOpen(false);
+  };
 
   const closeModal = useCallback(() => {
     setOpenButtonMenu(false);
@@ -73,6 +94,46 @@ const HeaderMemo = () => {
           <ButtonMenuBar open={openButtonMenu} />
         </div>
         <div className="flex gap-4">
+          <div>
+            {/* <h1>{t("greeting")}</h1> */}
+            <div className="relative inline-block text-left">
+              <div>
+                <button
+                  onClick={toggleDropdown}
+                  type="button"
+                  className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-gray-500 rounded-md focus:outline-none focus:ring-1 focus:ring-offset-2"
+                  id="options-menu"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                >
+                  {selectedOption}
+                </button>
+              </div>
+
+              {isOpen && (
+                <div
+                  className="absolute right-0 mt-2 w-32 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-[#1e1e1e78]"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="options-menu"
+                >
+                  <div className="py-1" role="none">
+                    {options.map((option) => (
+                      <div
+                        key={option.label}
+                        onClick={() => selectOption(option)}
+                        className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900 duration-300 hover:cursor-pointer"
+                        role="menuitem"
+                      >
+                        {option.label}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
           <Link href="https://github.com/PhongThanh0907" target="_blank">
             <Image
               className="h-10 w-10 bg-white rounded-full cursor-pointer hover-item"
@@ -99,7 +160,7 @@ const HeaderMemo = () => {
           ref={modalRef}
           className={`z-50 absolute left-0 right-0 bg-[#1e1e1e78] rounded-md ${
             scrolled ? "top-[60px]" : "top-[95px]"
-          }  flex flex-col pl-8 font-semibold text-xl h-80 w-full lg:w-96 opacity-100 duration-500 text-stone-100 overflow-hidden`}
+          }  flex flex-col pl-8 font-semibold text-xl h-64 w-full lg:w-96 opacity-100 duration-500 text-stone-100 overflow-hidden`}
         >
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-6">
