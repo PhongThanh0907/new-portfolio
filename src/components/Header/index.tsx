@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
+import { useThemeContext } from "@/providers/ThemeColor";
 import { MENU_HEADER } from "@/constants";
 import Github from "../../../public/github.png";
 import Linkedin from "../../../public/linkedin.png";
 import ButtonMenuBar from "./ButtonMenuBar";
-import { useThemeContext } from "@/providers/ThemeColor";
 
 const HeaderMemo = () => {
   const { currentTheme } = useThemeContext();
@@ -78,6 +78,7 @@ const HeaderMemo = () => {
               className="h-10 w-10 bg-white rounded-full cursor-pointer hover-item"
               src={Github}
               alt="github"
+              priority
             />
           </Link>
           <Link
@@ -88,6 +89,7 @@ const HeaderMemo = () => {
               className="h-10 w-10 cursor-pointer hover-item"
               src={Linkedin}
               alt="linkedin"
+              priority
             />
           </Link>
         </div>

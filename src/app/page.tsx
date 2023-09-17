@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import { motion, useAnimation } from "framer-motion";
 import Welcome from "@/components/Welcome";
 import Transition from "@/components/Transition";
 import StarsCanvas from "@/components/canvas/Stars";
@@ -16,41 +16,41 @@ export default function Home() {
     useState<boolean>(false);
   const [showMainPage, setShowMainPage] = useState<boolean>(false);
 
-  const handleWelcomeComplete = () => {
-    setShowWelcome(false);
-  };
+  const controls = useAnimation();
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShouldShowTransition(true);
-  //     setShowWelcome(false);
-  //   }, 4000);
+  useEffect(() => {
+    const animateAndHide = async () => {
+      // Xuất hiện trong vòng 2 giây
+      await controls.start({ opacity: 1 });
+      // Sau đó, biến mất sau 2 giây
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      controls.start({ opacity: 0 });
+    };
 
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, []);
+    animateAndHide();
+  }, [controls]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowMainPage(true);
       setShowWelcome(false);
-    }, 4000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer);
     };
   }, []);
 
+  const handleWelcomeComplete = () => {
+    setShowWelcome(false);
+  };
+
   return (
     <ThemeProviderWrapper>
       <div className="bg-black h-[100vh]">
         <StarsCanvas />
-        {showWelcome && <Welcome onWelcomeComplete={handleWelcomeComplete} />}
-        {/* {shouldShowTransition && <Transition />} */}
-        {showMainPage && (
-          <div className="relative">
-            <ToasterProvider />
+        {showWelcome && <Welcome />}
+        {!showWelcome && (
+          <div>
             <Settings />
             <Header />
           </div>

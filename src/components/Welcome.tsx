@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Variants, motion, useAnimation } from "framer-motion";
-
-interface WelcomeProps {
-  onWelcomeComplete: () => void;
-}
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const Typer = ({ text, duration, delay, ...props }: any) => {
   const letters = Array.from(text);
@@ -48,24 +44,35 @@ const Typer = ({ text, duration, delay, ...props }: any) => {
   );
 };
 
-const Welcome: React.FC<WelcomeProps> = ({ onWelcomeComplete }) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      onWelcomeComplete();
-    }, 5000);
+const Welcome = () => {
+  const controls = useAnimation();
 
-    return () => clearTimeout(timer);
-  }, [onWelcomeComplete]);
+  useEffect(() => {
+    const animateAndHide = async () => {
+      // Xuất hiện trong vòng 2 giây
+      await controls.start({ opacity: 1 });
+      // Sau đó, biến mất sau 2 giây
+      await new Promise((resolve) => setTimeout(resolve, 4000));
+      controls.start({ opacity: 0 });
+    };
+
+    animateAndHide();
+  }, [controls]);
 
   return (
-    <div className="h-[100vh] w-full flex justify-center items-center bg-black">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={controls}
+      exit={{ opacity: 0 }}
+      className="h-[100vh] w-full flex justify-center items-center bg-black"
+    >
       <Typer
         custom={6}
         text="Welcome to my portfolio"
         delay={0.1}
         duration={0.05}
       />
-    </div>
+    </motion.div>
   );
 };
 
