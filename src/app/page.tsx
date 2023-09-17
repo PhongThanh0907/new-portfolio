@@ -14,6 +14,8 @@ import { LanguageProvider } from "@/providers/TranslateProvider";
 import Overviews from "@/components/Overviews";
 import WorkExperiment from "@/components/WorkExperiment";
 import Technologies from "@/components/Technologies";
+import Project from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState<boolean>(true);
@@ -61,6 +63,8 @@ export default function Home() {
             <Overviews />
             <WorkExperiment />
             <Technologies />
+            <Project />
+            <Contact />
           </div>
         )}
       </div>

@@ -116,7 +116,7 @@ const HeaderMemo = () => {
 
               {isOpen && (
                 <div
-                  className="absolute right-0 mt-2 w-32 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-[#1e1e1e78]"
+                  className="absolute z-50 right-0 mt-2 w-32 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-[#1e1e1e78]"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="options-menu"
@@ -186,7 +186,7 @@ const HeaderMemo = () => {
           ))}
         </div>
       ) : (
-        <div className="z-50 absolute top-[95px] left-0 text-stone-100 bg-[#1e1e1e78] flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0">
+        <div className="z-50 absolute top-[95px] left-0 text-stone-100 bg-[#1e1e1e78] flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0 overflow-hidden">
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-3.5">
               <a
