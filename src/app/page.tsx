@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
+
 import Welcome from "@/components/Welcome";
-import Transition from "@/components/Transition";
 import StarsCanvas from "@/components/canvas/Stars";
 import Header from "@/components/Header";
 import Settings from "@/components/Settings";
 import ToasterProvider from "@/providers/ToasterProvider";
 import { ThemeProviderWrapper } from "@/providers/ThemeColor";
+import Banner from "@/components/Banner";
+import { LanguageProvider } from "@/providers/TranslateProvider";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState<boolean>(true);
@@ -46,6 +48,7 @@ export default function Home() {
 
   return (
     <ThemeProviderWrapper>
+      <LanguageProvider>
       <div className="bg-black h-[100vh]">
         <StarsCanvas />
         {showWelcome && <Welcome />}
@@ -53,9 +56,11 @@ export default function Home() {
           <div>
             <Settings />
             <Header />
+            <Banner />
           </div>
         )}
       </div>
+      </LanguageProvider>
     </ThemeProviderWrapper>
   );
 }

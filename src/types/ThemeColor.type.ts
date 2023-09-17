@@ -3,4 +3,6 @@ export interface ThemeColor {
   backgroundSecondary: string;
   shadow: string;
   primary: string;
+  bgCircle: string;
+  bgGradient: string;
 }

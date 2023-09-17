@@ -2,15 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-import { useLocalization } from "@/providers/TranslateProvider";
+import { useTranslation } from "@/providers/TranslateProvider";
 import { useThemeContext } from "@/providers/ThemeColor";
 import { MENU_HEADER } from "@/constants";
 import Github from "../../../public/github.png";
 import Linkedin from "../../../public/linkedin.png";
 import ButtonMenuBar from "./ButtonMenuBar";
-import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
 const options = [
   { label: "English", value: "en" },
@@ -19,7 +24,7 @@ const options = [
 
 const HeaderMemo = () => {
   const { currentTheme } = useThemeContext();
-  const { changeLanguage, t } = useLocalization("en");
+  const { changeLanguage } = useTranslation();
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [openButtonMenu, setOpenButtonMenu] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -85,7 +90,7 @@ const HeaderMemo = () => {
           : "h-24 duration-300 bg-[#1e1e1e78] transition-all"
       }`}
     >
-      <div className="width-80 flex-between">
+      <div className="width-80 flex-between items-center">
         <div
           id="button-menu"
           ref={buttonRef}
@@ -93,9 +98,8 @@ const HeaderMemo = () => {
         >
           <ButtonMenuBar open={openButtonMenu} />
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           <div>
-            {/* <h1>{t("greeting")}</h1> */}
             <div className="relative inline-block text-left">
               <div>
                 <button

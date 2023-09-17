@@ -1,3 +1,6 @@
 {
-    "greeting": "Xin chào, bạn khỏe không?"
+    "welcome": "Chào mừng bạn đến với Hồ sơ của tôi",
+    "name": "Tôi tên là Phong",
+    "work": "Và tôi là một nhà phát triển web.",
+    "job-name": "Kỹ sư phần mềm"
   }

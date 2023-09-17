@@ -21,6 +21,8 @@ const defaultThemeOptions: ThemeColor = {
   backgroundSecondary: themes.blue.backgroundSecondary,
   shadow: themes.blue.shadow,
   primary: themes.blue.primary,
+  bgCircle: themes.blue.bgCircle,
+  bgGradient: themes.blue.bgGradient,
 };
 
 export function ThemeProviderWrapper({ children }: { children: ReactNode }) {

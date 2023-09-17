@@ -56,6 +56,92 @@ body {
   transform: translateX(100%);
 }
 
+.changeColor-circle-blue {
+  animation: changeColorBlue 4s infinite;
+}
+
+.changeColor-circle-green {
+  animation: changeColorGreen 4s infinite;
+}
+.changeColor-circle-pink {
+  animation: changeColorPink 4s infinite;
+}
+
+.blue-gradient {
+  background: #00f2fe;
+  background: linear-gradient(-90deg, #00f2fe 0%, rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(
+    -90deg,
+    #00f2fe 0%,
+    rgba(60, 51, 80, 0) 100%
+  );
+}
+
+.green-gradient {
+  background: #7fff00;
+  background: linear-gradient(-90deg, #00f2fe 0%, rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(
+    -90deg,
+    #7fff00 0%,
+    rgba(60, 51, 80, 0) 100%
+  );
+}
+
+.pink-gradient {
+  background: #fe53bb;
+  background: linear-gradient(-90deg, #00f2fe 0%, rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(
+    -90deg,
+    #fe53bb 0%,
+    rgba(60, 51, 80, 0) 100%
+  );
+}
+
+@keyframes changeColorBlue {
+  0% {
+    background-color: #00f2ffd3;
+    box-shadow: 1px 2px 50px 10px #00f2fe;
+  }
+  50% {
+    background-color: #86f8fe;
+    box-shadow: 1px 2px 50px 16px #00f2fe;
+  }
+  100% {
+    background-color: #00f2fe;
+    box-shadow: 1px 2px 50px 16px #00f2fe;
+  }
+}
+
+@keyframes changeColorPink {
+  0% {
+    background-color: #ff7db5;
+    box-shadow: 1px 2px 50px 10px #ff85ce;
+  }
+  50% {
+    background-color: #ff36bf;
+    box-shadow: 1px 2px 50px 16px #ff85ce;
+  }
+  100% {
+    background-color: #fe53bb;
+    box-shadow: 1px 2px 50px 16px #ff85ce;
+  }
+}
+
+@keyframes changeColorGreen {
+  0% {
+    background-color: #95ff2a;
+    box-shadow: 1px 2px 50px 10px #7fff00;
+  }
+  50% {
+    background-color: #62c400;
+    box-shadow: 1px 2px 50px 16px #7fff00;
+  }
+  100% {
+    background-color: #7fff00;
+    box-shadow: 1px 2px 50px 16px #7fff00;
+  }
+}
+
 @keyframes spin {
   0% {
       transform: rotate(0deg);
