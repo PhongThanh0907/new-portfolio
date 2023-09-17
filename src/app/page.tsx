@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <ThemeProviderWrapper>
       <LanguageProvider>
-      <div className="bg-black">
+      <div className="bg-black h-full">
         <StarsCanvas />
         {showWelcome && <Welcome />}
         {!showWelcome && (

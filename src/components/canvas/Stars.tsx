@@ -8,7 +8,7 @@ import * as random from "maath/random/dist/maath-random.cjs";
 const Stars = React.memo((props: any) => {
   const ref = useRef<null | any>(null);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(6000), { radius: 1.2 })
+    random.inSphere(new Float32Array(2000), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {
@@ -35,7 +35,7 @@ Stars.displayName = "Stars";
 
 const StarsCanvas = () => {
   return (
-    <div className="w-full h-auto absolute inset-0">
+    <div className="w-full h-full fixed inset-0">
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Stars />
