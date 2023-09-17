@@ -23,6 +23,7 @@ const defaultThemeOptions: ThemeColor = {
   primary: themes.blue.primary,
   bgCircle: themes.blue.bgCircle,
   bgGradient: themes.blue.bgGradient,
+  textLight: themes.blue.textLight
 };
 
 export function ThemeProviderWrapper({ children }: { children: ReactNode }) {

@@ -2,5 +2,12 @@
     "welcome": "Chào mừng bạn đến với Hồ sơ của tôi",
     "name": "Tôi tên là Phong",
     "work": "Và tôi là một nhà phát triển web.",
-    "job-name": "Kỹ sư phần mềm"
+    "job-name": "Kỹ sư phần mềm",
+    "introduction": "GIỚI THIỆU",
+    "overview": "Tổng quan",
+    "textoverview": "Tôi là một nhà phát triển phần mềm có kỹ năng vượt trội với kinh nghiệm trong TypeScript và JavaScript, cũng như chuyên môn về các framework như React, NodeJS và NextJS. Tôi có khả năng học nhanh và hợp tác chặt chẽ với khách hàng để tạo ra các giải pháp hiệu quả, có khả năng mở rộng và thân thiện với người dùng, giúp giải quyết các vấn đề thực tế. Hãy cùng làm việc để biến ý tưởng của bạn thành hiện thực!",
+    "short-term": "Mục tiêu ngắn hạn",
+    "text-short-term": "Cải thiện và học nhiều kỹ năng mới trong lĩnh vực lập trình. Trở thành một Nhà phát triển Fullstack càng sớm càng tốt.",
+    "long-term": "Mục tiêu dài hạn",
+    "text-long-term": "Trở thành một Quản lý Dự án với kỹ năng chuyên nghiệp."
   }

@@ -97,6 +97,22 @@ body {
   );
 }
 
+.text-light-blue {
+  animation: textLightBlue 5s linear infinite;
+}
+
+.text-light-green {
+  animation: textLightGreen 5s linear infinite;
+}
+
+.text-light-pink {
+  animation: textLightPink 5s linear infinite;
+}
+
+.hero-img {
+  animation: rotate 5s linear 2s infinite alternate;
+}
+
 @keyframes changeColorBlue {
   0% {
     background-color: #00f2ffd3;
@@ -148,5 +164,113 @@ body {
   }
   100% {
       transform: rotate(360deg);
+  }
+}
+
+@keyframes textLightBlue {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #2d2d2e;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff,
+      0 0 160px #0ff;
+  }
+}
+
+@keyframes textLightGreen {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #2d2d2e;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #7fff00, 0 0 20px #7fff00, 0 0 40px #7fff00, 0 0 80px #7fff00,
+      0 0 160px #7fff00;
+  }
+}
+
+@keyframes textLightPink {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #2d2d2e;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff49b8, 0 0 20px #ff49b8, 0 0 40px #ff49b8, 0 0 80px #ff49b8,
+      0 0 160px #ff49b8;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(2deg);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(-2deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
   }
 }

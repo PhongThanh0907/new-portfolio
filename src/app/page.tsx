@@ -11,6 +11,7 @@ import ToasterProvider from "@/providers/ToasterProvider";
 import { ThemeProviderWrapper } from "@/providers/ThemeColor";
 import Banner from "@/components/Banner";
 import { LanguageProvider } from "@/providers/TranslateProvider";
+import Overviews from "@/components/Overviews";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState<boolean>(true);
@@ -22,9 +23,7 @@ export default function Home() {
 
   useEffect(() => {
     const animateAndHide = async () => {
-      // Xuất hiện trong vòng 2 giây
       await controls.start({ opacity: 1 });
-      // Sau đó, biến mất sau 2 giây
       await new Promise((resolve) => setTimeout(resolve, 2000));
       controls.start({ opacity: 0 });
     };
@@ -49,14 +48,15 @@ export default function Home() {
   return (
     <ThemeProviderWrapper>
       <LanguageProvider>
-      <div className="bg-black h-[100vh]">
-        <StarsCanvas />
+      <div className="bg-black">
+        {/* <StarsCanvas /> */}
         {showWelcome && <Welcome />}
         {!showWelcome && (
           <div>
             <Settings />
             <Header />
             <Banner />
+            <Overviews />
           </div>
         )}
       </div>

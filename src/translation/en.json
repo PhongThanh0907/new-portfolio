@@ -2,6 +2,13 @@
     "welcome": "Welcome to my Portfolio",
     "name": "My name is Phong",
     "work": "And I am a web developer",
-    "job-name": " Software Engineer"
+    "job-name": " Software Engineer",
+    "introduction": "INTRODUCTION",
+    "overview": "Overview",
+    "textoverview": "I&apos;m a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, NodeJS and NextJS . I&apos;m a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let&apos;s work together to bring your ideas to life!",
+    "short-term": "Short-term Goal",
+    "text-short-term": "Improving as well as learning many skills at programming. Become Fullstack Developer as soon as possible",
+    "long-term": "Long-term Goal",
+    "text-long-term": "Become a Project Manager with professional skills."
   }
   

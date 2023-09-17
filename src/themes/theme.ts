@@ -8,7 +8,8 @@ export const themes: { [key: string]: ThemeColor } = {
     primary: "#00f2fe",
     shadow: "",
     bgCircle: "changeColor-circle-blue",
-    bgGradient: "blue-gradient"
+    bgGradient: "blue-gradient",
+    textLight: "text-light-blue"
   },
   green: {
     backgroundPrimary: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
@@ -16,7 +17,9 @@ export const themes: { [key: string]: ThemeColor } = {
     primary: "#7FFF00",
     shadow: "",
     bgCircle: "changeColor-circle-green",
-    bgGradient: "green-gradient"
+    bgGradient: "green-gradient",
+    textLight: "text-light-green"
+
   },
   pink: {
     backgroundPrimary: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
@@ -24,6 +27,8 @@ export const themes: { [key: string]: ThemeColor } = {
     primary: "#FE53BB",
     shadow: "",
     bgCircle: "changeColor-circle-pink",
-    bgGradient: "pink-gradient"
+    bgGradient: "pink-gradient",
+    textLight: "text-light-pink"
   },
+  
 };

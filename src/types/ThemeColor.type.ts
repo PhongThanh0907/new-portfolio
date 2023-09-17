@@ -5,4 +5,5 @@ export interface ThemeColor {
   primary: string;
   bgCircle: string;
   bgGradient: string;
+  textLight: string
 }
