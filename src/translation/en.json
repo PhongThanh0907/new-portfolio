@@ -9,6 +9,12 @@
     "short-term": "Short-term Goal",
     "text-short-term": "Improving as well as learning many skills at programming. Become Fullstack Developer as soon as possible",
     "long-term": "Long-term Goal",
-    "text-long-term": "Become a Project Manager with professional skills."
+    "text-long-term": "Become a Project Manager with professional skills.",
+    "job-desc-1": "Developing and maintaining web applications using React.js, Typescript and other related technologies.",
+    "job-desc-2": "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+    "job-desc-3": "Implementing responsive design and ensuring cross-browser compatibility.",
+    "job-desc-4": "Participating in code reviews and providing constructive feedback to other developers.",
+    "company": "Companies I've worked for",
+    "work-experience": "Work Experience"
   }
   
