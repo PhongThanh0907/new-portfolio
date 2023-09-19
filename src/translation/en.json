@@ -27,6 +27,10 @@
     "what-your-email": "What's your email address?",
     "your-message": "Your message",
     "text-message": "What you want to say?",
-    "send": "Send"
+    "send": "Send",
+    "text-project-01": "This is the administration website of Anpha Petrol company. The website has a wide range of functionalities such as VoIP, CRUD products, debt management, invoice creation, order creation, user role management, and more.",
+    "text-project-02": "This is the human resource management website of Anphapetrol Company. The website offers a wide range of functionalities such as employee CRUD (Create, Read, Update, Delete), contract management, appointments, dismissals, department management, commendations, and resignations, among others",
+    "text-project-03": "This is a project of MHK Company. The website is used to create the company's plans and strategies. Additionally, it provides statistics on sales figures and KPI targets for each department and individual. The website can help managers gain a better understanding of the data and revenue for each department and individual. It also features user permission functionality and more",
+    "text-project-04": "This is my personal project. The website includes authentication, adding items to the shopping cart,..."
   }
   

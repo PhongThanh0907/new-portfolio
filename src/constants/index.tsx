@@ -15,6 +15,10 @@ import TYPESCRIPT from '../../public/technologies/typescript.png'
 import Project1 from '../../public/project1.webp'
 import Project2 from '../../public/project2.jpg'
 import Project3 from '../../public/project3.jpg'
+import Project01 from '../../public/project0.1.png'
+import Project02 from '../../public/project0.2.png'
+import Project03 from '../../public/project0.3.png'
+import Project04 from '../../public/project0.4.png'
 
 export const MENU_HEADER = [
     { title: "About", id: "#overview", delay: "200" },
@@ -78,9 +82,9 @@ export const MENU_HEADER = [
   
   export const projects = [
     {
-      name: "Shop Card",
+      name: "Admin E-Commerce",
       description:
-        "Build user UX/UI, show products, search by brands, type, price and sort, shopping cart, others...",
+        "This is the administration website of Anpha Petrol company. The website has a wide range of functionalities such as VoIP, CRUD products, debt management, invoice creation, order creation, user role management, and more",
       tags: [
         {
           name: "react",

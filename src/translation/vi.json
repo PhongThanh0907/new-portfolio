@@ -27,5 +27,9 @@
     "what-your-email": "Nhập địa chỉ email của bạn",
     "your-message": "Lời nhắn",
     "text-message": "Lời nhắn",
-    "send": "Gửi"
+    "send": "Gửi",
+    "text-project-01": "Đây là website quản trị của công ty anphapetrol. Website có rất nhiều chức năng như Voip, CRUD sản phẩm, công nợ, tạo phiếu, tạo đơn hàng, phân quyền user, ...",
+    "text-project-02": "Đây là website quản lý nhân sự của công ty anphapetrol. Website có rất nhiều chức năng như CRUD nhân viên, hợp đồng, bổ nhiệm, miễn nhiệm,phòng ban, khen thưởng, nghĩ việc, ...",
+    "text-project-03": "Đây là dự án của công ty MHK. Website dùng để tạo ra những kế hoạch, chiến lược của công ty đặt ra. Ngoài ra còn thống kê doanh số, chỉ tiêu KPI cho từng phòng ban và cho từng cá nhân. Website có thể giúp người quản lí nắm rõ hơn về số liệu, doanh thu của từng phòng ban và từng cá nhân. Website cũng có chức năng phân quyền user,...",
+    "text-project-04": "Đây là dự án cá nhân của tôi. Website có phần authentication, thêm vào giỏ hàng, ..."
   }
