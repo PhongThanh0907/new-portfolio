@@ -49,63 +49,59 @@ const Modal: React.FC<ModalProps> = ({
       <DialogTitle sx={{ fontWeight: "600" }} id="responsive-dialog-title">
         Project
       </DialogTitle>
-      <DialogContent
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-          gap: "20px",
-        }}
-      >
-        <div className="w-[100%] mx-auto">
-          <Image
-            className="rounded-md shadow-lg border"
-            style={{ transition: "all 0.3s", borderColor: "#c7c7c7" }}
-            src={selectImage}
-            alt="img"
-          />
-          <div className="grid grid-cols-4 gap-4 mt-4">
-            {image.map((e, index) => (
-              <Image
-                onClick={() => setSelectImage(e)}
-                style={{ borderColor: "#c7c7c7" }}
-                key={index}
-                className="rounded-md border shadow-lg cursor-pointer"
-                src={e}
-                alt="img"
-              />
-            ))}
+      <DialogContent>
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-6">
+          <div className="w-[100%] mx-auto">
+            <Image
+              className="rounded-md shadow-lg border"
+              style={{ transition: "all 0.3s", borderColor: "#c7c7c7" }}
+              src={selectImage}
+              alt="img"
+            />
+            <div className="grid grid-cols-4 gap-4 mt-4">
+              {image.map((e, index) => (
+                <Image
+                  onClick={() => setSelectImage(e)}
+                  style={{ borderColor: "#c7c7c7" }}
+                  key={index}
+                  className="rounded-md border shadow-lg cursor-pointer"
+                  src={e}
+                  alt="img"
+                />
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-col gap-2">
-          <h4 className="text-2xl">{name}</h4>
-          <p className="py-2 text-gray-500">{description}</p>
-          <span>Team size: {teamSize}</span>
-          <span className="">My role: {myRole}</span>
-          {linkGithub && (
-            <span>
-              Link github:{" "}
-              <a href={linkGithub} target="_blank">
-                {linkGithub}
-              </a>
-            </span>
-          )}
-          {linkWeb && (
-            <span>
-              Link demo:{" "}
-              <a href={linkWeb} target="_blank">
-                {linkWeb}
-              </a>
-            </span>
-          )}
-          <div>
-            Technical:{" "}
-            {technical.map((e, index) => (
-              <span key={index}>
-                {e}
-                {index < technical.length - 1 ? ", " : "."}
+          <div className="flex flex-col gap-2">
+            <h4 className="text-2xl">{name}</h4>
+            <p className="py-2 text-gray-500">{description}</p>
+            <span>Team size: {teamSize}</span>
+            <span className="">My role: {myRole}</span>
+            {linkGithub && (
+              <span>
+                Link github:{" "}
+                <a href={linkGithub} target="_blank">
+                  {linkGithub}
+                </a>
               </span>
-            ))}
+            )}
+            {linkWeb && (
+              <span>
+                Link demo:{" "}
+                <a href={linkWeb} target="_blank">
+                  {linkWeb}
+                </a>
+              </span>
+            )}
+            <div>
+              Technical:{" "}
+              {technical.map((e, index) => (
+                <span key={index}>
+                  {e}
+                  {index < technical.length - 1 ? ", " : "."}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </DialogContent>
