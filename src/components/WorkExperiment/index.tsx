@@ -11,6 +11,8 @@ import Image from "next/image";
 
 import TextLight from "../TextLight";
 import Anpha from "../../../public/logoanpha.jpg";
+import BSC from "../../../public/BSC.png";
+import Hasaki from "../../../public/hasaki.jpg";
 import { useTranslation } from "@/providers/TranslateProvider";
 
 const ExperienceCard = React.memo(({ experience }: { experience: any }) => {
@@ -79,14 +81,45 @@ const WorkExperienceMemo = () => {
       icon: Anpha,
       teamSize: 8,
       iconBg: "#383E56",
-      date: "June 2022 - Present",
+      date: "June 2022 - August 2023",
       technology:
-        "HTML, CSS, Javascript, Typescript, ReactJS, Redux-saga, Redux, TailwindCSS, Ant Design, MySQL, NodeJS, More... ",
+        "Javascript, Typescript, ReactJS, Redux-saga, Redux Toolkit, TailwindCSS, Ant Design, MySQL, NodeJS, More... ",
       points: [
-        `${t("job-desc-1")}`,
-        `${t("job-desc-2")}`,
-        `${t("job-desc-3")}`,
-        `${t("job-desc-4")}`,
+        `Developing and maintaining web applications using React.js, Typescript and other related technologies.`,
+        `Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.`,
+        `Implementing responsive design and ensuring cross-browser compatibility.`,
+        `Participating in code reviews and providing constructive feedback to other developers.`,
+      ],
+    },
+    {
+      title: "Fullstack Developer",
+      company_name: "BSC Company",
+      icon: BSC,
+      teamSize: 4,
+      iconBg: "#383E56",
+      date: "June 2023 - February 2024",
+      technology:
+        "Typescript, ReactJS, Vite, React-Query, Redux Toolkit, TailwindCSS, MUI, MySQL, NestJS, More... ",
+      points: [
+        `Build a project written in ReactJS for the FrontEnd and NestJs for the BackEnd to develop the company's Strategy Management System.`,
+        `Developing and maintaining web applications using React.js, Typescript and other related technologies.`,
+        `Implementing responsive design and ensuring cross-browser compatibility.`,
+      ],
+    },
+    {
+      title: "Frontend Developer",
+      company_name: "Hasaki Company",
+      icon: Hasaki,
+      teamSize: 6,
+      iconBg: "#383E56",
+      date: "August 2023 - Present",
+      technology:
+        "Typescript, ReactJS, Vite, React-Query, Zustand, TailwindCSS, Ant Design, More... ",
+      points: [
+        `Developing and maintaining web applications using React.js, Typescript and other related technologies.`,
+        `Collaboration is key in your role as you work closely with back-end developers to integrate front-end components with server-side logic. Your input is valuable during the planning and decision-making stages, where you provide insights into feasibility, scalability, and best practices for front-end development`,
+        `Implementing responsive design and ensuring cross-browser compatibility.`,
+        `Participating in code reviews and providing constructive feedback to other developers.`,
       ],
     },
   ];
