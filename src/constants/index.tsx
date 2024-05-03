@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Anpha from "../../public/logoanpha.jpg";
 import ANTD from "../../public/technologies/antd.png";
 import GIT from "../../public/technologies/git.png";
 import JAVASCRIPT from "../../public/technologies/javascript.png";
@@ -15,14 +14,6 @@ import R from "../../public/technologies/reactquery.png";
 import Zustand from "../../public/technologies/zustand.png";
 import Nest from "../../public/technologies/nestjs.png";
 import Mysql from "../../public/technologies/mysql.png";
-
-import Project1 from "../../public/project1.webp";
-import Project2 from "../../public/project2.jpg";
-import Project3 from "../../public/project3.jpg";
-import Project01 from "../../public/project0.1.png";
-import Project02 from "../../public/project0.2.png";
-import Project03 from "../../public/project0.3.png";
-import Project04 from "../../public/project0.4.png";
 
 export const MENU_HEADER = [
   { title: "About", id: "#overview", delay: "200" },
@@ -48,92 +39,4 @@ export const TECHNOLOGIES = [
   { name: "MongoDB", icon: <Image src={MONGO} alt="icon" /> },
   { name: "MySQL", icon: <Image src={Mysql} alt="icon" /> },
   { name: "NodeJS", icon: <Image src={NODE} alt="icon" /> },
-];
-
-export const projects = [
-  {
-    name: "Admin E-Commerce",
-    description:
-      "This is the administration website of Anpha Petrol company. The website has a wide range of functionalities such as VoIP, CRUD products, debt management, invoice creation, order creation, user role management, and more",
-    tags: [
-      {
-        name: "react",
-        color: "text-blue-500",
-      },
-      {
-        name: "typescript",
-        color: "text-[#00FFFF]",
-      },
-      {
-        name: "nodejs",
-        color: "text-[#ADFF2F]",
-      },
-      {
-        name: "mongodb",
-        color: "text-green-500",
-      },
-      {
-        name: "tailwind",
-        color: "text-purple-500",
-      },
-    ],
-    image: Project1,
-    source_code_link: "https://github.com/PhongThanh0907/Shop-Ecommerce-V2",
-  },
-  {
-    name: "Porfolio",
-    description: "Build UX/UI, Animation, Show information",
-    tags: [
-      {
-        name: "nextjs",
-        color: "text-blue-500",
-      },
-      {
-        name: "typescript",
-        color: "text-[#00FFFF]",
-      },
-      {
-        name: "three",
-        color: "text-[#ADFF2F]",
-      },
-      {
-        name: "framer-motion",
-        color: "text-green-500",
-      },
-      {
-        name: "tailwind",
-        color: "text-purple-500",
-      },
-    ],
-    image: Project2,
-    source_code_link: "https://github.com/PhongThanh0907/my-blog",
-  },
-  {
-    name: "CineClone",
-    description: "Build UX/UI, Login, Register",
-    tags: [
-      {
-        name: "reactjs",
-        color: "text-blue-500",
-      },
-      {
-        name: "typescript",
-        color: "text-[#00FFFF]",
-      },
-      {
-        name: "nodejs",
-        color: "text-[#ADFF2F]",
-      },
-      {
-        name: "mongoDB",
-        color: "text-green-500",
-      },
-      {
-        name: "tailwind",
-        color: "text-purple-500",
-      },
-    ],
-    image: Project3,
-    source_code_link: "https://github.com/PhongThanh0907/my-blog",
-  },
 ];

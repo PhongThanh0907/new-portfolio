@@ -11,42 +11,44 @@ import TextLight from "../TextLight";
 import Project01 from "../../../public/project0.1.png";
 import Project02 from "../../../public/project0.2.png";
 import Project03 from "../../../public/project0.3.png";
-import Project04 from "../../../public/project0.4.png";
 import Project11 from "../../../public/project1.1.png";
 import Project12 from "../../../public/project1.2.png";
 import Project13 from "../../../public/project1.3.png";
 import Project21 from "../../../public/project2.2.png";
 import Project22 from "../../../public/project2.3.png";
 import Project23 from "../../../public/project2.4.png";
-import Project31 from "../../../public/project1.webp";
+import Project31 from "../../../public/project3.1.png";
+import Project32 from "../../../public/project3.2.png";
+import Project33 from "../../../public/project3.3.png";
+import Project41 from "../../../public/project4.1.png";
+import Project42 from "../../../public/project4.2.png";
+import Project43 from "../../../public/project4.3.png";
 import TextTruncate from "../TextTruncate";
 import Modal from "../Modal/Modal";
 
 const ProjectCard = React.memo(
   ({
     index,
-    name,
+    title,
     description,
     tags,
-    image,
-    source_code_link,
-    teamSize,
-    technical,
-    myRole,
-    linkGithub,
-    linkWeb,
+    img,
+    team,
+    technology,
+    role,
   }: {
     index: number;
-    name: string;
+    title: string;
     description: string;
-    tags: { name: string; color: string }[];
-    image: StaticImageData[];
-    source_code_link: string;
-    teamSize: number;
-    technical: string[];
-    myRole: string;
-    linkGithub?: string;
-    linkWeb?: string;
+    functionRole: string;
+    technology: string[];
+    role: string;
+    team: number;
+    img: StaticImageData[];
+    tags: {
+      name: string;
+      color: string;
+    }[];
   }) => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const handleClose = useCallback(() => {
@@ -68,14 +70,16 @@ const ProjectCard = React.memo(
             className="relative w-full h-[230px]"
           >
             <Image
-              src={image[0]}
+              src={img[0]}
               alt="project_image"
               className="w-full h-full object-cover rounded-2xl"
             />
 
             <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
               <div
-                onClick={() => window.open(source_code_link, "_blank")}
+                onClick={() =>
+                  window.open("https://github.com/PhongThanh0907", "_blank")
+                }
                 className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
               >
                 <Image
@@ -88,7 +92,7 @@ const ProjectCard = React.memo(
           </div>
 
           <div className="mt-5">
-            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+            <h3 className="text-white font-bold text-[24px]">{title}</h3>
             <p className="mt-2 text-gray-400 text-[14px]">
               <TextTruncate text={description} />
             </p>
@@ -97,7 +101,7 @@ const ProjectCard = React.memo(
           <div className="mt-4 flex flex-wrap gap-2 absolute bottom-5">
             {tags.map((tag) => (
               <p
-                key={`${name}-${tag.name}`}
+                key={`${title}-${tag.name}`}
                 className={`text-[14px] ${tag.color}`}
               >
                 #{tag.name}
@@ -107,18 +111,15 @@ const ProjectCard = React.memo(
         </Tilt>
         {openModal && (
           <Modal
-            name={name}
+            name={title}
             description={description}
             tags={tags}
-            image={image}
-            source={source_code_link}
+            image={img}
             open={openModal}
             handleClose={handleClose}
-            teamSize={teamSize}
-            technical={technical}
-            myRole={myRole}
-            linkGithub={linkGithub}
-            linkWeb={linkWeb}
+            teamSize={team}
+            technical={technology}
+            myRole={role}
           />
         )}
       </motion.div>
@@ -134,82 +135,21 @@ const ProjectMemo = () => {
 
   const projects = [
     {
-      name: "Admin E-Commerce",
-      description: `${t("text-project-01")}`,
-      tags: [
-        {
-          name: "react",
-          color: "text-blue-500",
-        },
-        {
-          name: "javascript",
-          color: "text-[#00FFFF]",
-        },
-        {
-          name: "socket-io",
-          color: "text-[#ADFF2F]",
-        },
-        {
-          name: "antd",
-          color: "text-green-500",
-        },
-        {
-          name: "tailwind",
-          color: "text-purple-500",
-        },
-      ],
-      image: [Project01, Project02, Project03, Project04],
-      source_code_link: "https://github.com/PhongThanh0907/Shop-Ecommerce-V2",
-      myRole: "Frontend Developer",
-      teamSize: 8,
-      technical: [
-        "React",
-        "Redux",
-        "TailwindCSS",
-        "Ant Design",
-        "SocketIO",
-        "NodeJS",
-        "MySQL",
-      ],
-    },
-    {
-      name: "Human Resource Management",
-      description: `${t("text-project-02")}`,
-      tags: [
-        {
-          name: "reactjs",
-          color: "text-blue-500",
-        },
-        {
-          name: "typescript",
-          color: "text-[#00FFFF]",
-        },
-        {
-          name: "antd",
-          color: "text-[#ADFF2F]",
-        },
-        {
-          name: "tailwind",
-          color: "text-green-500",
-        },
-      ],
-      image: [Project11, Project12, Project13],
-      source_code_link: "https://github.com/PhongThanh0907/my-blog",
-      teamSize: 8,
-      myRole: "Frontend Developer",
-      technical: [
-        "React",
-        "Redux",
-        "TailwindCSS",
-        "Ant Design",
+      title: "OMS Hasaki",
+      description:
+        "This is the order management system of Hasaki, managing orders from partners such as Shopee, Lazada, and TikTok. It allows for order adjustments and integration with the WMS system to manage inventory, packaging, delivery, returns and more.",
+      functionRole:
+        "This is the human resource management website of Hasaki Company. The website offers a wide range of functionalities such as order CRUD (Create, Read, Update, Delete), report order, report payment, among others.",
+      technology: [
+        "ReactJS",
         "Typescript",
-        "NodeJS",
-        "MySQL",
+        "Zustand",
+        "Ant Design",
+        "TailwindCSS",
       ],
-    },
-    {
-      name: "Admin KPI",
-      description: `${t("text-project-03")}`,
+      role: "Frontend Developer",
+      team: 8,
+      img: [Project31, Project32, Project33],
       tags: [
         {
           name: "reactjs",
@@ -228,30 +168,76 @@ const ProjectMemo = () => {
           color: "text-green-500",
         },
         {
-          name: "nestjs",
-          color: "text-purple-500",
-        },
-        {
           name: "react-query",
           color: "text-orange-500",
         },
-      ],
-      image: [Project21, Project22, Project23],
-      source_code_link: "https://github.com/PhongThanh0907/my-blog",
-      myRole: "Frontend Developer",
-      teamSize: 4,
-      technical: [
-        "React",
-        "Typescript",
-        "Redux-Toolkit",
-        "TailwindCSS",
-        "MUI",
-        "NestJS",
+        {
+          name: "zustand",
+          color: "text-yellow-500",
+        },
       ],
     },
     {
-      name: "E-commerce Clone",
-      description: `${t("text-project-04")}`,
+      title: "OMS-WMS Integration Project",
+      description:
+        "A project to integrate the Order Management System with the Warehouse Management System",
+      functionRole:
+        "This is the administration website of Anpha Petrol company. The website has a wide range of functionalities such as VoIP, CRUD products, Debt management, Invoice creation, Order creation, User role management and more.",
+      technology: [
+        "ReactJS",
+        "Javascript",
+        "Redux-Toolkit",
+        "Ant Design",
+        "SocketIO",
+        "TailwindCSS",
+      ],
+      role: "Frontend Developer",
+      team: 8,
+      img: [Project01, Project02, Project03],
+      tags: [
+        {
+          name: "react",
+          color: "text-blue-500",
+        },
+        {
+          name: "javascript",
+          color: "text-[#00FFFF]",
+        },
+        {
+          name: "socket-io",
+          color: "text-[#ADFF2F]",
+        },
+        {
+          name: "redux-toolkit",
+          color: "text-yellow-500",
+        },
+        {
+          name: "antd",
+          color: "text-green-500",
+        },
+        {
+          name: "tailwind",
+          color: "text-purple-500",
+        },
+      ],
+    },
+
+    {
+      title: "Human Resource Management",
+      description:
+        "A project to manage the human resources of the company, including employee information, salary, contract, attendance, and more.",
+      functionRole:
+        "This is the human resource management website of Anphapetrol Company. The website offers a wide range of functionalities such as employee CRUD (Create, Read, Update, Delete), contract management, appointments, dismissals, department management, commendations, and resignations, among others.",
+      technology: [
+        "ReactJS",
+        "Typescript",
+        "Redux-Toolkit",
+        "Ant Design",
+        "TailwindCSS",
+      ],
+      role: "Frontend Developer",
+      team: 4,
+      img: [Project11, Project12, Project13],
       tags: [
         {
           name: "reactjs",
@@ -262,32 +248,101 @@ const ProjectMemo = () => {
           color: "text-[#00FFFF]",
         },
         {
+          name: "antd",
+          color: "text-[#ADFF2F]",
+        },
+        {
           name: "tailwind",
           color: "text-green-500",
         },
         {
           name: "redux-toolkit",
+          color: "text-yellow-500",
+        },
+      ],
+    },
+
+    {
+      title: "Admin KPI",
+      description:
+        "This is a website used to create company strategies for each stage.",
+      functionRole:
+        "This is administration website of BSC Company. This website features functions such as creating company strategies, generating KPIs for each department and individual, and assigning specific tasks to each department, individual and more.",
+      technology: [
+        "ReactJS",
+        "Typescript",
+        "Redux-Toolkit",
+        "MUI",
+        "SocketIO",
+        "TailwindCSS",
+      ],
+      role: "Fullstack Developer",
+      team: 4,
+      img: [Project21, Project22, Project23],
+      tags: [
+        {
+          name: "reactjs",
+          color: "text-blue-500",
+        },
+        {
+          name: "typescript",
+          color: "text-[#00FFFF]",
+        },
+        {
+          name: "MUI",
           color: "text-[#ADFF2F]",
         },
         {
-          name: "nodejs",
+          name: "tailwind",
+          color: "text-green-500",
+        },
+        {
+          name: "redux-toolkit",
+          color: "text-yellow-500",
+        },
+        {
+          name: "nestjs",
           color: "text-purple-500",
         },
+        {
+          name: "react-query",
+          color: "text-orange-500",
+        },
       ],
-      image: [Project31],
-      source_code_link: "https://github.com/PhongThanh0907/my-blog",
-      myRole: "Fullstack",
-      teamSize: 1,
-      technical: [
-        "React",
-        "Typescript",
-        "Redux-Toolkit",
-        "TailwindCSS",
-        "MUI",
-        "NestJS",
+    },
+
+    {
+      title: "CDP Hasaki",
+      description:
+        "A Customer Data Platform (CDP) is a software system designed to consolidate and manage customer data from various sources. Its primary purpose is to organize customer data in a structured and unified manner to provide detailed and comprehensive insights into customer behavior and preferences for marketing, sales, and service strategies.",
+      functionRole:
+        "This is the human resource management website of Hasaki Company. The website offers a wide range of functionalities such as customer CRUD (Create, Read, Update, Delete), rule segment, among others.",
+      technology: ["ReactJS", "Typescript", "Zustand", "MUI", "TailwindCSS"],
+      role: "Frontend Developer",
+      team: 8,
+      img: [Project41, Project42, Project43],
+      tags: [
+        {
+          name: "reactjs",
+          color: "text-blue-500",
+        },
+        {
+          name: "typescript",
+          color: "text-[#00FFFF]",
+        },
+        {
+          name: "MUI",
+          color: "text-[#ADFF2F]",
+        },
+        {
+          name: "tailwind",
+          color: "text-green-500",
+        },
+        {
+          name: "react-query",
+          color: "text-orange-500",
+        },
       ],
-      linkGithub: "https://github.com/PhongThanh0907/Shop-Ecom",
-      linkWeb: "https://shop-ecom-phi.vercel.app/",
     },
   ];
 

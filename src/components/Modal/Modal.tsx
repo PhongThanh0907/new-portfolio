@@ -14,12 +14,9 @@ interface ModalProps {
   description: string;
   tags: { name: string; color: string }[];
   image: StaticImageData[];
-  source: string;
   teamSize: number;
   technical: string[];
   myRole: string;
-  linkGithub?: string;
-  linkWeb?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -32,9 +29,6 @@ const Modal: React.FC<ModalProps> = ({
   teamSize,
   technical,
   myRole,
-  source,
-  linkGithub,
-  linkWeb,
 }) => {
   const [selectImage, setSelectImage] = useState(image[0]);
   return (
@@ -77,22 +71,6 @@ const Modal: React.FC<ModalProps> = ({
             <p className="py-2 text-gray-500">{description}</p>
             <span>Team size: {teamSize}</span>
             <span className="">My role: {myRole}</span>
-            {linkGithub && (
-              <span>
-                Link github:{" "}
-                <a href={linkGithub} target="_blank">
-                  {linkGithub}
-                </a>
-              </span>
-            )}
-            {linkWeb && (
-              <span>
-                Link demo:{" "}
-                <a href={linkWeb} target="_blank">
-                  {linkWeb}
-                </a>
-              </span>
-            )}
             <div>
               Technical:{" "}
               {technical.map((e, index) => (
