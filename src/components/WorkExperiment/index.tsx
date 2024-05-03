@@ -12,8 +12,6 @@ import Image from "next/image";
 import TextLight from "../TextLight";
 import Anpha from "../../../public/logoanpha.jpg";
 import { useTranslation } from "@/providers/TranslateProvider";
-import Header from "../Header";
-import Test from "./test";
 
 const ExperienceCard = React.memo(({ experience }: { experience: any }) => {
   return (
