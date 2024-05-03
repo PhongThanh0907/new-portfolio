@@ -83,7 +83,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="pt-0 lg:pt-52 pb-20 w-full grid grid-cols-1 lg:grid-cols-10 max-w-7xl mx-auto"
+      className="pt-40 lg:pt-52 pb-20 w-full grid grid-cols-1 lg:grid-cols-10 max-w-7xl mx-auto"
     >
       <motion.div
         initial={{
