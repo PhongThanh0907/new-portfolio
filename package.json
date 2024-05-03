@@ -38,7 +38,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@types/react-vertical-timeline-component": "^3.3.3",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "i": "^0.3.7",
     "npm": "^10.1.0"
   }
